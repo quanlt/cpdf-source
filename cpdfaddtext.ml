@@ -282,7 +282,7 @@ let addtext
   let replace_pairs pdf filename bates batespad num page =
       [
        "%PageDiv2", (fun () -> string_of_int ((num + 1) / 2));
-       "%Page", (fun () -> string_of_int num);
+       "%Page", (fun () -> string_of_int (num - bates));
        "%Roman", (fun () -> roman_upper num);
        "%roman", (fun () -> roman_lower num);
        "%filename", (fun () -> filename);
